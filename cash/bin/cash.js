@@ -1,13 +1,14 @@
 /*eslint-disable no-process-exit*/
+// list of module 
 const got = require('got');
 const money = require('money');
 const chalk = require('chalk');
 const ora = require('ora');
 const currencies = require('../lib/currencies.json');
 
-const API = 'https://api.fixer.io/latest';
+const API = 'https://api.fixer.io/latest';  // this is the url of the API
 
-const convert = configuration => {
+const convert = configuration => {  // here we convert a certain amount of money from one currency and we display it in the console
   const {amount, to, from, response, loading} = configuration;
 
   money.base = response.body.base;
@@ -33,7 +34,7 @@ const convert = configuration => {
   );
   process.exit(1);
 };
-
+ // In this function we call the API, the the funtion called "convert"
 const cash = async command => {
   const amount = command.amount;
   const from = command.from.toUpperCase();
