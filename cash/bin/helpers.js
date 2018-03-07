@@ -1,4 +1,6 @@
 /*eslint-disable no-process-exit*/
+
+//list of modules
 const chalk = require('chalk');
 const updateNotifier = require('update-notifier');
 const Conf = require('conf');
@@ -8,6 +10,8 @@ const config = new Conf();
 
 updateNotifier({pkg}).notify();
 
+
+// here we want to save the default currency
 const saveCurrencies = argv => {
   config.set('defaultFrom', argv[1] || config.get('defaultFrom', 'USD'));
   config.set(
@@ -58,12 +62,14 @@ Examples:
 };
 
 const helpers = argv => {
-  // Version
+  // Version     
+  // it either display the version
   if (argv.indexOf('--version') !== - 1 || argv.indexOf('-v') !== - 1) {
     version();
   }
 
   // Help
+  // or a help path 
   if (
     argv.indexOf('--help') !== - 1
     || argv.indexOf('-h') !== - 1
@@ -72,7 +78,7 @@ const helpers = argv => {
     help();
   }
 
-  if (
+  if ( // or the default currency
     argv.indexOf('--save') !== - 1
     || argv.indexOf('-s') !== - 1
     || ! argv.length
