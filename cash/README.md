@@ -1,6 +1,6 @@
 # cash
 ## Features
-- Convert one currency to an other thans to this JavaScript module 
+- Convert one currency to an other thanks to this JavaScript module 
 - Choose between a list of [32 currencies](https://github.com/victoirelinder/3-musketeers/tree/master/cash/lib) 
 
 
@@ -13,7 +13,7 @@ First you need to make sure [Node.js](https://nodejs.org/en/download/) is instal
 
 
   	`cd /path/to/workspace/cash `
-  	 `npm install 
+  	 `npm install `
 
   ## User guide
 
@@ -23,5 +23,9 @@ First you need to make sure [Node.js](https://nodejs.org/en/download/) is instal
   ` Node index.js <amount> <currency> <currency>`   If you want to convert one currency to an other
 
   `Node index.js <amount> <currency> `          If you want to convert one currency into the default currency
+  
+  
+  check out if you have the last version by running this command in your terminal
+  `Node index.js --version
 
 
